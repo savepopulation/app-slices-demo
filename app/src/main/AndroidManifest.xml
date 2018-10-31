@@ -16,6 +16,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <provider
+            android:name=".CustomSliceProvider"
+            android:authorities="com.raqun.slices"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW"/>
+                <category android:name="android.app.slice.category.SLICE"/>
+                <data
+                    android:host="raqun.com"
+                    android:pathPrefix="/slice"
+                    android:scheme="http"/>
+            </intent-filter>
+        </provider>
+
     </application>
 
 </manifest>
